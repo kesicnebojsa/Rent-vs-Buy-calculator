@@ -2,7 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url('https://fonts.googleapis.com/css?family=Architects+Daughter');
+@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans');
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -25,6 +25,10 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
+
+html {
+	font-family: 'Merriweather Sans', sans-serif;
+}
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -68,28 +72,44 @@ select {
 	height: 20px;
 }
 h1 {
-	font-size: 26px;
+	font-size: 52px;
 	margin: 24px 0px;
 	font-weight: 600;
 	text-align: center;
 }
 h2 {
-	font-size: 20px;
+	font-size: 44px;
 	margin: 18px 0px;
 	font-weight: 600;
 }
 h3 {
-	font-size: 16px;
+	font-size: 24px;
+	margin: 16px 0px;
+	font-weight: 600;
+}
+h4 {
+	font-size: 28px;
+	margin: 16px 0px;
+	font-weight: 600;
+}
+h5 {
+	font-size: 20px;
+	margin: 16px 0px;
+	font-weight: 500;
+}
+h6 {
+	font-size: 21px;
 	margin: 16px 0px;
 	font-weight: 600;
 }
 p {
-    margin: 0;
+    margin: 10px 0px;
 	padding: 0;
 	border: 0;
-	font-size:16px;
-	font: inherit;
+	font-weight: 500;
+	font-size:22px;
 	vertical-align: baseline;
+	text-align: left;
 }
 
 /* General Classes */
@@ -97,4 +117,146 @@ p {
 
 .inlineBlock {
 	display: inline-block;
+}
+#rent_buy_wrapper_subb {
+	width: 1200px;
+	margin: 0 auto;
+}
+#rent_buy_main_head {
+	width: 800px;
+	margin: 0 auto;
+}
+#rent_buy_main_head p {
+	margin: 20px 0px;  
+}
+#rent_buy_two_buttons_main {
+   width: 800px;
+   margin: 0 auto; 
+}
+.head2Buttons {
+	width: 380px;
+}
+#rent_buy_start_here_1 {
+	margin-right: 30px;
+}
+.twoButtons {
+	width: 380px;
+	border: 1px solid #bfc0c1;
+	border-radius:5px;
+	text-align: center; 
+}
+.twoButtons p {
+	width: 200px;
+	margin: 0 auto;
+	text-align: center;
+	color: #595959;
+}
+#rent_buy_button_1 {
+	margin-right: 30px;
+}
+.rotateClass {
+	width: 15px;
+	height: 15px;
+	border-bottom: 1px solid  #595959;
+	border-right: 1px solid  #595959;
+	margin: 0 auto;
+	margin-bottom: 25px;
+	margin-top: 10px;
+	transform: rotate(45deg);
+}
+.twoButtons:hover {
+	cursor: pointer; 
+}
+.mainDivClass {
+	margin-top: 60px;
+}
+.leftMain {
+	width: 750px;
+}
+.orange1Class {
+	color: #ed8631;
+}
+.mainOrangeH1 {
+	margin: 30px 0px 30px 0px;
+}
+.allSliders {
+	-webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 740px; /* Full-width */
+    height: 10px; /* Specified height */
+    background: #e5e5e5; /* Grey background */
+    border: none;
+    outline: none; /* Remove outline */
+    opacity: 1; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    border-radius: 10px;
+}
+.allSliders::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #f98525; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 50%;
+}
+#rent_buy_button_2_option_right_inputs_main {
+    vertical-align: top;
+    margin-top: 40px;
+}
+.allRightDivs {
+	width: 370px;
+	border: 1px solid #a5a5a5;
+	margin-left: 20px;
+	text-align: center;
+	vertical-align: top;
+	margin-top: 40px;
+}
+.allOrangeButtonsRight {
+	width: 330px;
+	height: 50px;
+	border-radius: 5px;
+	color: #fff;
+	margin: 0 auto;
+	background-image: linear-gradient(to right, #ed8631, #f07e33, #f37535, #f56c39, #f7623d);
+}
+.allOrangeButtonsRightP {
+    line-height: 50px;
+    text-align: center;
+}
+#rent_buy_button_2_option_right_inputs_subb_2 {
+	width: 280px;
+	margin: 0 auto;
+	text-align: center;
+}
+#rent_buy_button_2_option_right_inputs_subb_2 a {
+	text-decoration: none;
+	color:#2564a8; 
+}
+.mainRangePoints {
+	height: 36px;
+}
+.allGrayLineRangeSpots {
+	width: 740px;
+	height: 10px;
+	margin: 13px 0px -1px 0px;
+	background-color:#e5e5e5;
+	z-index: 0.1;
+}
+.spotsClass {
+	width: 27px;
+	height: 27px;
+	border: 3px solid #e5e5e5;
+	border-radius: 50%;
+	background-color: #fff;
+	z-index: 1;
+	margin-top: -20px;
+}
+.pointClass {
+	margin-right: 81px;
+}
+.spotsClass:hover {
+	background-color:#f98525;
+	cursor: pointer;
 }
