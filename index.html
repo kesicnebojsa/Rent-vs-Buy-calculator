@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 	<title>Rent vs Buy Calculator</title>
-	<link rel="stylesheet" href="css/css.css">
+	<link rel="stylesheet" href="css/cssVer1.css">
 </head>
 <body>
 	<div id="rent_buy_main_wrapper">
@@ -50,23 +50,27 @@
 					<div id="rent_buy_main_button_2_slider_1">
 						<h4>House price</h4>
 						<p>What’s the average price of a house like the one you want, in the suburb you want to live in?</p>
-						<input id="rent_buy_button_2_slider_input_1" class="allSliders" type="range" min="1" max="100" value="50">
+						<input id="rent_buy_button_2_slider_input_1" class="allSliders" type="range" min="1000" max="1000000" value="600000" step="1000">
 					</div>
+					<p id="price_value"> $600000 </p>
 					<div id="rent_buy_main_button_2_slider_2">
 						<h4>Deposit</h4>
 						<p>What amount can you put down as a deposit?</p>
-						<input id="rent_buy_button_2_slider_input_2" class="allSliders" type="range" min="1" max="100" value="50">
+						<input id="rent_buy_button_2_slider_input_2" class="allSliders" type="range" min="30000" max="300000" value="55000" step="1000">
 					</div>
+					<p id="deposit_value"> $55000 </p>
 					<div id="rent_buy_main_button_2_slider_3">
 						<h4>Interest rate</h4>
 						<p>Adjust the interest rate if you know what it is. (We’ve included a standard variable rate here).</p>
-						<input id="rent_buy_button_2_slider_input_3" class="allSliders" type="range" min="1" max="100" value="50">
+						<input id="rent_buy_button_2_slider_input_3" class="allSliders" type="range" min="2" max="10" value="3.82" step="0.01">
 					</div>
+					<p id="interest_value"> 3.82% </p>
 					<div id="rent_buy_main_button_2_slider_4">
 						<h4>How long do you plan on staying?</h4>
 						<p>Buying doesn't make sense over a short period of time because of the upfront costs, whereas renting can be viable for both a short or longer term.</p>
-						<input id="rent_buy_button_2_slider_input_4" class="allSliders" type="range" min="1" max="100" value="50">
-					</div>	
+						<input id="rent_buy_button_2_slider_input_4" class="allSliders" type="range" min="1" max="100" value="7">
+					</div>
+					<p id="years_value"> 7 years</p>	
 				</div>
 				<div id="rent_buy_button_2_option_right_inputs_main" class="inlineBlock">
 					<div id="rent_buy_button_2_option_right_inputs_subb_1" class="allRightDivs">
@@ -228,7 +232,7 @@
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
-<!-- <script src="js/cleave.js"></script> -->
+<script src="js/jsVer1.js"></script>
 
 </body>
 </html>
