@@ -129,6 +129,9 @@ p {
 #rent_buy_main_head p {
 	margin: 20px 0px;  
 }
+#rent_buy_button_1_option_input_main,#rent_buy_button_2_option_input_main {
+	display: none;
+}
 #rent_buy_two_buttons_main {
    width: 800px;
    margin: 0 auto; 
@@ -259,4 +262,11 @@ p {
 .spotsClass:hover {
 	background-color:#f98525;
 	cursor: pointer;
+}
+.activeSpots, .activeOwning, .activeFlexibility, .activeCommited {
+	background-color: #f98525;
+	border-color: #f98525;
+}
+#rent_buy_button_1_option_right_inputs_main_1, #rent_buy_button_1_option_right_inputs_main_2, #rent_buy_button_1_option_right_inputs_main_3 {
+	display: none;
 }

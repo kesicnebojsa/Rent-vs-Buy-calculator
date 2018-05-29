@@ -47,10 +47,24 @@
 				<div id="rent_buy_button_2_option_left_inputs" class="inlineBlock leftMain">
 					<h2 class="orange1Class mainOrangeH1">Does renting make more sense for you financially?</h2>
 					<h3>First, we need some basic information about the kind of place you would consider buying.</h3>
+					<h2> &nbsp; </h2>
+					<div>
+						<h3> (For Testing) State? </h3>
+						<select id="rent_buy_state_input">
+						  <option value="ACT">ACT</option>
+						  <option value="NSW">NSW</option>
+						  <option value="NT">NT</option>
+						  <option value="QlD">QlD</option>
+						  <option value="SA">SA</option>
+						  <option value="TAS">TAS</option>
+						  <option value="VIC">VIC</option>
+						  <option value="WA" selected>WA</option>
+						</select>
+					</div>
 					<div id="rent_buy_main_button_2_slider_1">
 						<h4>House price</h4>
 						<p>What’s the average price of a house like the one you want, in the suburb you want to live in?</p>
-						<input id="rent_buy_button_2_slider_input_1" class="allSliders" type="range" min="1000" max="1000000" value="600000" step="1000">
+						<input id="rent_buy_button_2_slider_input_1" class="allSliders" type="range" min="1000" max="10000000" value="600000" step="1000">
 					</div>
 					<p id="price_value"> $600000 </p>
 					<div id="rent_buy_main_button_2_slider_2">
@@ -74,12 +88,12 @@
 				</div>
 				<div id="rent_buy_button_2_option_right_inputs_main" class="inlineBlock">
 					<div id="rent_buy_button_2_option_right_inputs_subb_1" class="allRightDivs">
-						<h4>Renting is financially better for you if you can find a similar home for</h4>
-						<h2 class="orange1Class"><span>$444</span></h2>
-						<h6>per week or less</h6>
+						<h4 id="renting_advice">Renting is financially better for you if you can find a similar home for</h4>
+						<h2 class="orange1Class"><span id="rent_value">$444</span></h2>
+						<h6 id="renting_advice_h6">per week or less</h6>
 						<h6>Typically your monthly mortgage</h6>
 						<h6>payments would be</h6>
-						<h2 class="orange1Class"><span>$444</span></h2>
+						<h2 class="orange1Class"><span id="typical_mortg_value">$444</span></h2>
 						<div id="rent_buy_button_2_option_right_inputs_button" class="allOrangeButtonsRight">
 							<p class="allOrangeButtonsRightP" >Let’s find you a deal</p>
 						</div>
@@ -104,19 +118,19 @@
 						<div id="rent_buy_range_point_1" class="mainRangePoints">
 							<div id="gray_line_1" class="allGrayLineRangeSpots">
 							</div>
-							<div id="rent_buy_range_point_1_spot_1" class="spotsClass pointClass inlineBlock">
+							<div id="rent_buy_range_point_1_spot_1" class="spotsClass pointClass inlineBlock locationSpots">
 							</div>
-							<div id="rent_buy_range_point_1_spot_2" class="spotsClass pointClass inlineBlock">
+							<div id="rent_buy_range_point_1_spot_2" class="spotsClass pointClass inlineBlock locationSpots">
 							</div>
-							<div id="rent_buy_range_point_1_spot_3" class="spotsClass pointClass inlineBlock">
+							<div id="rent_buy_range_point_1_spot_3" class="spotsClass pointClass inlineBlock locationSpots">
 							</div>
-							<div id="rent_buy_range_point_1_spot_4" class="spotsClass pointClass inlineBlock">
+							<div id="rent_buy_range_point_1_spot_4" class="spotsClass pointClass inlineBlock locationSpots">
 							</div>
-							<div id="rent_buy_range_point_1_spot_4" class="spotsClass pointClass inlineBlock">
+							<div id="rent_buy_range_point_1_spot_5" class="spotsClass pointClass inlineBlock locationSpots">
 							</div>
-							<div id="rent_buy_range_point_1_spot_6" class="spotsClass pointClass inlineBlock">
+							<div id="rent_buy_range_point_1_spot_6" class="spotsClass pointClass inlineBlock locationSpots">
 							</div>
-							<div id="rent_buy_range_point_1_spot_7" class="spotsClass  inlineBlock">
+							<div id="rent_buy_range_point_1_spot_7" class="spotsClass  inlineBlock locationSpots">
 							</div>	
 						</div>	
 					</div>
@@ -126,19 +140,19 @@
 						<div id="rent_buy_range_point_2" class="mainRangePoints">
 							<div id="gray_line_2" class="allGrayLineRangeSpots">
 							</div>
-							<div id="rent_buy_range_point_2_spot_1" class="spotsClass pointClass inlineBlock">
+							<div id="rent_buy_range_point_2_spot_1" class="spotsClass pointClass inlineBlock owningSpots">
 							</div>
-							<div id="rent_buy_range_point_2_spot_2" class="spotsClass pointClass inlineBlock">
+							<div id="rent_buy_range_point_2_spot_2" class="spotsClass pointClass inlineBlock owningSpots">
 							</div>
-							<div id="rent_buy_range_point_2_spot_3" class="spotsClass pointClass inlineBlock">
+							<div id="rent_buy_range_point_2_spot_3" class="spotsClass pointClass inlineBlock owningSpots">
 							</div>
-							<div id="rent_buy_range_point_2_spot_4" class="spotsClass pointClass inlineBlock">
+							<div id="rent_buy_range_point_2_spot_4" class="spotsClass pointClass inlineBlock owningSpots">
 							</div>
-							<div id="rent_buy_range_point_2_spot_4" class="spotsClass pointClass inlineBlock">
+							<div id="rent_buy_range_point_2_spot_5" class="spotsClass pointClass inlineBlock owningSpots">
 							</div>
-							<div id="rent_buy_range_point_2_spot_6" class="spotsClass pointClass inlineBlock">
+							<div id="rent_buy_range_point_2_spot_6" class="spotsClass pointClass inlineBlock owningSpots">
 							</div>
-							<div id="rent_buy_range_point_2_spot_7" class="spotsClass  inlineBlock">
+							<div id="rent_buy_range_point_2_spot_7" class="spotsClass  inlineBlock owningSpots">
 							</div>	
 						</div>	
 					</div>
@@ -148,19 +162,19 @@
 						<div id="rent_buy_range_point_3" class="mainRangePoints">
 							<div id="gray_line_3" class="allGrayLineRangeSpots">
 							</div>
-							<div id="rent_buy_range_point_3_spot_1" class="spotsClass pointClass inlineBlock">
+							<div id="rent_buy_range_point_3_spot_1" class="spotsClass pointClass inlineBlock flexibilitySpots">
 							</div>
-							<div id="rent_buy_range_point_3_spot_2" class="spotsClass pointClass inlineBlock">
+							<div id="rent_buy_range_point_3_spot_2" class="spotsClass pointClass inlineBlock flexibilitySpots">
 							</div>
-							<div id="rent_buy_range_point_3_spot_3" class="spotsClass pointClass inlineBlock">
+							<div id="rent_buy_range_point_3_spot_3" class="spotsClass pointClass inlineBlock flexibilitySpots">
 							</div>
-							<div id="rent_buy_range_point_3_spot_4" class="spotsClass pointClass inlineBlock">
+							<div id="rent_buy_range_point_3_spot_4" class="spotsClass pointClass inlineBlock flexibilitySpots">
 							</div>
-							<div id="rent_buy_range_point_3_spot_4" class="spotsClass pointClass inlineBlock">
+							<div id="rent_buy_range_point_3_spot_5" class="spotsClass pointClass inlineBlock flexibilitySpots">
 							</div>
-							<div id="rent_buy_range_point_3_spot_6" class="spotsClass pointClass inlineBlock">
+							<div id="rent_buy_range_point_3_spot_6" class="spotsClass pointClass inlineBlock flexibilitySpots">
 							</div>
-							<div id="rent_buy_range_point_3_spot_7" class="spotsClass  inlineBlock">
+							<div id="rent_buy_range_point_3_spot_7" class="spotsClass  inlineBlock flexibilitySpots">
 							</div>	
 						</div>	
 					</div>
@@ -170,19 +184,19 @@
 						<div id="rent_buy_range_point_4" class="mainRangePoints">
 							<div id="gray_line_4" class="allGrayLineRangeSpots">
 							</div>
-							<div id="rent_buy_range_point_4_spot_1" class="spotsClass pointClass inlineBlock">
+							<div id="rent_buy_range_point_4_spot_1" class="spotsClass pointClass inlineBlock commitedSpots">
 							</div>
-							<div id="rent_buy_range_point_4_spot_2" class="spotsClass pointClass inlineBlock">
+							<div id="rent_buy_range_point_4_spot_2" class="spotsClass pointClass inlineBlock commitedSpots">
 							</div>
-							<div id="rent_buy_range_point_4_spot_3" class="spotsClass pointClass inlineBlock">
+							<div id="rent_buy_range_point_4_spot_3" class="spotsClass pointClass inlineBlock commitedSpots">
 							</div>
-							<div id="rent_buy_range_point_4_spot_4" class="spotsClass pointClass inlineBlock">
+							<div id="rent_buy_range_point_4_spot_4" class="spotsClass pointClass inlineBlock commitedSpots">
 							</div>
-							<div id="rent_buy_range_point_4_spot_4" class="spotsClass pointClass inlineBlock">
+							<div id="rent_buy_range_point_4_spot_5" class="spotsClass pointClass inlineBlock commitedSpots">
 							</div>
-							<div id="rent_buy_range_point_4_spot_6" class="spotsClass pointClass inlineBlock">
+							<div id="rent_buy_range_point_4_spot_6" class="spotsClass pointClass inlineBlock commitedSpots">
 							</div>
-							<div id="rent_buy_range_point_4_spot_7" class="spotsClass  inlineBlock">
+							<div id="rent_buy_range_point_4_spot_7" class="spotsClass  inlineBlock commitedSpots">
 							</div>	
 						</div>	
 					</div>	
@@ -232,6 +246,7 @@
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
+<script src="js/tables.js"></script>
 <script src="js/jsVer1.js"></script>
 
 </body>
