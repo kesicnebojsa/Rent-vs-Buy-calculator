@@ -12,7 +12,7 @@
 				<h1>Buying vs renting.</h1>
 				<h1>Which one is better for you?</h1>
 				<p>It’s a complicated question, but we can help make it easier to decide.</p>
-				<p>Our <b>Rent vs Buy Calculator</b> compares the financial benefits of renting vs
+				<p>Our <b>Financial Calculator</b> compares the financial benefits of renting vs
 					buying. And our <b>Lifestyle Gauge </b>assesses how you feel about renting or buying
 					- are you a renter at heart, or do you really want to own?</p>	
 			</div><!-- rent_buy_main_head -->
@@ -46,10 +46,10 @@
 			<div id="rent_buy_button_2_option_input_main" class="mainDivClass">
 				<div id="rent_buy_button_2_option_left_inputs" class="inlineBlock leftMain">
 					<h2 class="orange1Class mainOrangeH1">Does renting make more sense for you financially?</h2>
-					<h3>First, we need some basic information about the kind of place you would consider buying.</h3>
+					<h4>First, we need some basic information about the kind of place you would consider buying.</h4>
 					<h2> &nbsp; </h2>
-					<div>
-						<h3> (For Testing) State? </h3>
+					<div id="rent_buy_state_select">
+						<h4> Select your state</h4>
 						<select id="rent_buy_state_input">
 						  <option value="ACT">ACT</option>
 						  <option value="NSW">NSW</option>
@@ -64,7 +64,10 @@
 					<div id="rent_buy_main_button_2_slider_1">
 						<h4>House price</h4>
 						<p>What’s the average price of a house like the one you want, in the suburb you want to live in?</p>
-						<input id="rent_buy_button_2_slider_input_1" class="allSliders" type="range" min="1000" max="10000000" value="600000" step="1000">
+						<div id="rent_buy_input_output_1">
+							<input id="rent_buy_button_2_slider_input_1" name="foo" class="allSliders" type="range" min="1000" max="10000000" value="600000" step="1000">
+							<output id="price_value" for="foo" onforminput="value = foo.valueAsNumber;"></output>
+						</div>	
 					</div>
 					<p id="price_value"> $600000 </p>
 					<div id="rent_buy_main_button_2_slider_2">
@@ -114,7 +117,7 @@
 					<h2 class="orange1Class mainOrangeH1">Does renting suit your lifestyle better? </h2>
 					<div id="rent_buy_main_button_1_slider_1">
 						<h4>How important is location to you?</h4>
-						<p>For example are you determined to live within walking distance of work or are you happy with a long commute?</p>
+						<p class="allPPointSliderMargin">For example are you determined to live within walking distance of work or are you happy with a long commute?</p>
 						<div id="rent_buy_range_point_1" class="mainRangePoints">
 							<div id="gray_line_1" class="allGrayLineRangeSpots">
 							</div>
@@ -132,11 +135,15 @@
 							</div>
 							<div id="rent_buy_range_point_1_spot_7" class="spotsClass  inlineBlock locationSpots">
 							</div>	
+						</div>
+						<div id="rent_buy_point_expl_1" class="allPointExplMain">
+							<p class="inlineBlock allLeftPPointClass">I’m open minded about location</p>
+							<p class="inlineBlock allRightPPointClass">I need to live close to work / the city</p>
 						</div>	
 					</div>
 					<div id="rent_buy_main_button_1_slider_2">
 						<h4>How important is owning your home to you? </h4>
-						<p>Are you comfortable with renting, or is owning a home now extremely important to you?</p>
+						<p class="allPPointSliderMargin">Are you comfortable with renting, or is owning a home now extremely important to you?</p>
 						<div id="rent_buy_range_point_2" class="mainRangePoints">
 							<div id="gray_line_2" class="allGrayLineRangeSpots">
 							</div>
@@ -154,11 +161,15 @@
 							</div>
 							<div id="rent_buy_range_point_2_spot_7" class="spotsClass  inlineBlock owningSpots">
 							</div>	
+						</div>
+						<div id="rent_buy_point_expl_2" class="allPointExplMain">
+							<p class="inlineBlock allLeftPPointClass">I love renting</p>
+							<p class="inlineBlock allRightPPointClass">I need to own my home now</p>
 						</div>	
 					</div>
 					<div id="rent_buy_main_button_1_slider_3">
 						<h4>How important is flexibility to you?</h4>
-						<p>Do you want to be able to move house without too many hassles, or are you okay with being tied to where you live?</p>
+						<p class="allPPointSliderMargin">Do you want to be able to move house without too many hassles, or are you okay with being tied to where you live?</p>
 						<div id="rent_buy_range_point_3" class="mainRangePoints">
 							<div id="gray_line_3" class="allGrayLineRangeSpots">
 							</div>
@@ -176,11 +187,15 @@
 							</div>
 							<div id="rent_buy_range_point_3_spot_7" class="spotsClass  inlineBlock flexibilitySpots">
 							</div>	
+						</div>
+						<div id="rent_buy_point_expl_3" class="allPointExplMain">
+							<p class="inlineBlock allLeftPPointClass">I want to be able to move easily if needed</p>
+							<p class="inlineBlock allRightPPointClass">I’m fine with staying in a property long term</p>
 						</div>	
 					</div>
 					<div id="rent_buy_main_button_1_slider_4">
 						<h4>How commited are you?</h4>
-						<p>Here’s the big one – Are you truly ready to commit to a long term mortgage and your own house?</p>
+						<p class="allPPointSliderMargin">Here’s the big one – Are you truly ready to commit to a long term mortgage and your own house?</p>
 						<div id="rent_buy_range_point_4" class="mainRangePoints">
 							<div id="gray_line_4" class="allGrayLineRangeSpots">
 							</div>
@@ -198,6 +213,10 @@
 							</div>
 							<div id="rent_buy_range_point_4_spot_7" class="spotsClass  inlineBlock commitedSpots">
 							</div>	
+						</div>
+						<div id="rent_buy_point_expl_4" class="allPointExplMain">
+							<p class="inlineBlock allLeftPPointClass1">Would rather think about it in a year or so</p>
+							<p class="inlineBlock allRightPPointClass1">I want to buy a house now, and I’m ready to commit!</p>
 						</div>	
 					</div>	
 				</div>

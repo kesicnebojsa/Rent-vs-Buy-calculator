@@ -72,13 +72,13 @@ select {
 	height: 20px;
 }
 h1 {
-	font-size: 52px;
+	font-size: 40px;
 	margin: 24px 0px;
 	font-weight: 600;
 	text-align: center;
 }
 h2 {
-	font-size: 44px;
+	font-size: 32px;
 	margin: 18px 0px;
 	font-weight: 600;
 }
@@ -88,9 +88,10 @@ h3 {
 	font-weight: 600;
 }
 h4 {
-	font-size: 28px;
+	font-size: 22px;
 	margin: 16px 0px;
 	font-weight: 600;
+	line-height: 24px;
 }
 h5 {
 	font-size: 20px;
@@ -98,7 +99,7 @@ h5 {
 	font-weight: 500;
 }
 h6 {
-	font-size: 21px;
+	font-size: 18px;
 	margin: 16px 0px;
 	font-weight: 600;
 }
@@ -107,9 +108,10 @@ p {
 	padding: 0;
 	border: 0;
 	font-weight: 500;
-	font-size:22px;
+	font-size:20px;
 	vertical-align: baseline;
 	text-align: left;
+	line-height: 24px;
 }
 
 /* General Classes */
@@ -127,10 +129,13 @@ p {
 	margin: 0 auto;
 }
 #rent_buy_main_head p {
-	margin: 20px 0px;  
+	margin: 20px 0px;
+	line-height: 24px;  
 }
 #rent_buy_button_1_option_input_main,#rent_buy_button_2_option_input_main {
 	display: none;
+	margin-bottom: 50px;
+	margin-top: 50px;
 }
 #rent_buy_two_buttons_main {
    width: 800px;
@@ -194,6 +199,8 @@ p {
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
     transition: opacity .2s;
     border-radius: 10px;
+    position: relative;
+    display: block;
 }
 .allSliders::-webkit-slider-thumb {
     -webkit-appearance: none; /* Override default look */
@@ -203,6 +210,7 @@ p {
     background: #f98525; /* Green background */
     cursor: pointer; /* Cursor on hover */
     border-radius: 50%;
+    position: relative;
 }
 #rent_buy_button_2_option_right_inputs_main {
     vertical-align: top;
@@ -240,6 +248,9 @@ p {
 .mainRangePoints {
 	height: 36px;
 }
+.allPPointSliderMargin {
+	margin: 20px 0px 40px 0px;
+}
 .allGrayLineRangeSpots {
 	width: 740px;
 	height: 10px;
@@ -262,6 +273,7 @@ p {
 .spotsClass:hover {
 	background-color:#f98525;
 	cursor: pointer;
+	border-color: #f98525;
 }
 .activeSpots, .activeOwning, .activeFlexibility, .activeCommited {
 	background-color: #f98525;
@@ -269,4 +281,67 @@ p {
 }
 #rent_buy_button_1_option_right_inputs_main_1, #rent_buy_button_1_option_right_inputs_main_2, #rent_buy_button_1_option_right_inputs_main_3 {
 	display: none;
+}
+.allPointExplMain {
+	width: 748px;
+}
+.allPointExplMain p {
+	width: 200px;
+	font-size: 16px;
+	vertical-align: top;
+	line-height: 19px;
+	font-weight: 600;
+}
+.allLeftPPointClass {
+	margin-right: 342px;
+}
+.allRightPPointClass {
+	text-align: right;
+}
+#rent_buy_point_expl_4 .allRightPPointClass1 {
+	width: 220px;
+	text-align: right;
+}
+.allLeftPPointClass1 {
+	width: 200px;
+	margin-right: 322px;
+}
+#rent_buy_button_1_option_right_inputs_main_1 h3 {
+    padding: 0px 10px;
+}
+#rent_buy_state_select select {
+	border: 2px solid #000;
+	padding: 0px 1px 3px 1px;
+	font-size: 18px;
+	font-family: 'Merriweather Sans', sans-serif; 
+}
+output { 
+  position: absolute;
+  background-image: linear-gradient(top, #444444, #999999);
+  width: auto; 
+  height: 30px; 
+  text-align: center; 
+  color: black; 
+  border-radius: 10px; 
+  display: inline-block; 
+  font: bold 15px/30px Georgia;
+  bottom: 175%;
+  left: 0;
+  margin-left: -1%;
+}
+output:after { 
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 10px solid #999999;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  margin-top: -1px;
+}
+#rent_buy_input_output_1 {
+	position: relative;
 }

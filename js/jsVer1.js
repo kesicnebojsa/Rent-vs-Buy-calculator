@@ -202,15 +202,15 @@ function calcLifestyle() {
 		console.log( average  );
 
 		if ( average < 3 ) {
-			$('#rent_buy_button_1_option_right_inputs_main_3').css("display","block");
+			$('#rent_buy_button_1_option_right_inputs_main_3').css("display","inline-block");
 			$('#rent_buy_button_1_option_right_inputs_main_1, #rent_buy_button_1_option_right_inputs_main_2').css("display","none");
 		}
 		if ( (average >= 3) && (average < 5.5) ) {
-			$('#rent_buy_button_1_option_right_inputs_main_2').css("display","block");
+			$('#rent_buy_button_1_option_right_inputs_main_2').css("display","inline-block");
 			$('#rent_buy_button_1_option_right_inputs_main_1, #rent_buy_button_1_option_right_inputs_main_3').css("display","none");
 		}
 		if (average >= 5.5) {
-			$('#rent_buy_button_1_option_right_inputs_main_1').css("display","block");
+			$('#rent_buy_button_1_option_right_inputs_main_1').css("display","inline-block");
 			$('#rent_buy_button_1_option_right_inputs_main_3, #rent_buy_button_1_option_right_inputs_main_2').css("display","none");
 		}
 		$('html, body').animate({
@@ -298,3 +298,43 @@ $('.spotsClass').on("click", function(){
  	calculate();
  	writeResults();
  });
+
+
+
+
+
+$(function() {
+ var el, newPoint, newPlace, offset;
+ 
+ // Select all range inputs, watch for change
+ $("input[type='range']").change(function() {
+ 
+   // Cache this for efficiency
+   el = $(this);
+   
+   // Measure width of range input
+   width = el.width();
+   
+   // Figure out placement percentage between left and right of input
+   newPoint = (el.val() - el.attr("min")) / (el.attr("max") - el.attr("min"));
+   
+   // Janky value to get pointer to line up better
+   offset = -1.3;
+   
+   // Prevent bubble from going beyond left or right (unsupported browsers)
+   if (newPoint < 0) { newPlace = 0; }
+   else if (newPoint > 1) { newPlace = width; }
+   else { newPlace = width * newPoint + offset; offset -= newPoint; }
+   
+   // Move bubble
+   el
+     .next("output")
+     .css({
+       left: newPlace,
+       marginLeft: offset + "%"
+     })
+     .text(el.val());
+ })
+ // Fake a change to position bubble at page load
+ .trigger('change');
+});
