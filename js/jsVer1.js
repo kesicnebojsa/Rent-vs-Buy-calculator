@@ -272,6 +272,11 @@ $('.spotsClass').on("click", function(){
 
 
 
+ $('input, select').on("change",function() {
+ 	getInputValues();
+ 	calculate();
+ 	writeResults();
+ });
  $(function(){
  	getInputValues();
  	calculate();
@@ -291,20 +296,15 @@ $('.spotsClass').on("click", function(){
     if(names.length>1 && names[0]==this)
       console.warn('Multiple names #'+this.name);
   });
- })
-
- $('input, select').on("change",function() {
- 	getInputValues();
- 	calculate();
- 	writeResults();
- });
 
 
 
 
 
-$(function() {
- var el, newPoint, newPlace, offset;
+
+
+
+ var el, newPoint, newPlace, offset, width;
  
  // Select all range inputs, watch for change
  $("input[type='range']").change(function() {
