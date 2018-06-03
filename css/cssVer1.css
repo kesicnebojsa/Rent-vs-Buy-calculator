@@ -236,6 +236,9 @@ p {
     line-height: 50px;
     text-align: center;
 }
+.allOrangeButtonsRightP:hover {
+    cursor: pointer;
+}
 #rent_buy_button_2_option_right_inputs_subb_2 {
 	width: 280px;
 	margin: 0 auto;
@@ -345,6 +348,15 @@ output:after {
 #rent_buy_input_output_1 {
 	position: relative;
 }
-#rent_buy_main_button_2_slider_1 p {
-    margin-bottom: 30px;
+.allPLeftSliders {
+    margin-bottom: 40px;
+}
+#rent_buy_button_2_option_right_inputs_subb_1 h4 {
+	width: 340px;
+	margin: 0 auto;
+	margin-top:15px;
+	line-height: 25px;
+}
+.allMainDivsLeftSliders {
+	margin-top: 15px;
 }
