@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-	<title>Rent vs Buy Calculator</title>
+	<title>Financial Calculator</title>
 	<link rel="stylesheet" href="css/cssVer1.css">
 </head>
 <body>
@@ -65,29 +65,34 @@
 						<h4>House price</h4>
 						<p  class="allPLeftSliders">What’s the average price of a house like the one you want, in the suburb you want to live in?</p>
 						<div id="rent_buy_input_output_1">
-							<input id="rent_buy_button_2_slider_input_1" name="foo" class="allSliders" type="range" min="1000" max="10000000" value="600000" step="1000">
-							<output id="price_value" for="foo" onforminput="value = foo.valueAsNumber;"></output>
+							<input id="rent_buy_button_2_slider_input_1" name="slide1" class="allSliders" type="range" min="150000" max="3500000" value="600000" step="1000">
+							<output for="slide1" ></output>
 						</div>	
 					</div>
-					<p id="price_value"> $600000 </p>
 					<div id="rent_buy_main_button_2_slider_2" class="allMainDivsLeftSliders">
 						<h4>Deposit</h4>
 						<p class="allPLeftSliders">What amount can you put down as a deposit?</p>
-						<input id="rent_buy_button_2_slider_input_2" class="allSliders" type="range" min="30000" max="300000" value="55000" step="1000">
+						<div id="rent_buy_input_output_2">
+							<input id="rent_buy_button_2_slider_input_2" name="slide2" class="allSliders" type="range" min="10000" max="700000" value="55000" step="1000">
+							<output for="slide2" ></output>
+						</div>
 					</div>
-					<p id="deposit_value"> $55000 </p>
 					<div id="rent_buy_main_button_2_slider_3" class="allMainDivsLeftSliders">
 						<h4>Interest rate</h4>
 						<p class="allPLeftSliders">Adjust the interest rate if you know what it is. (We’ve included a standard variable rate here).</p>
-						<input id="rent_buy_button_2_slider_input_3" class="allSliders" type="range" min="2" max="10" value="3.82" step="0.01">
+						<div id="rent_buy_input_output_3">
+							<input id="rent_buy_button_2_slider_input_3" name="slide3" class="allSliders" type="range" min="2" max="12" value="3.82" step="0.01">
+							<output for="slide3" ></output>
+						</div>
 					</div>
-					<p id="interest_value"> 3.82% </p>
 					<div id="rent_buy_main_button_2_slider_4" class="allMainDivsLeftSliders">
 						<h4>How long do you plan on staying?</h4>
 						<p class="allPLeftSliders">Buying doesn't make sense over a short period of time because of the upfront costs, whereas renting can be viable for both a short or longer term.</p>
-						<input id="rent_buy_button_2_slider_input_4" class="allSliders" type="range" min="1" max="100" value="7">
+						<div id="rent_buy_input_output_4">
+							<input id="rent_buy_button_2_slider_input_4" name="slide4" class="allSliders" type="range" min="1" max="25" value="7">
+							<output for="slide4" ></output>
+						</div>
 					</div>
-					<p id="years_value"> 7 years</p>	
 				</div>
 				<div id="rent_buy_button_2_option_right_inputs_main" class="inlineBlock">
 					<div id="rent_buy_button_2_option_right_inputs_subb_1" class="allRightDivs">
@@ -108,7 +113,7 @@
 						</div>
 					</div>
 					<div id="rent_buy_button_2_option_right_inputs_subb_2">
-						<h5><a href="">Find out if renting suits your lifestyle better?</a></h5>
+						<h5><a href="#">Find out if renting suits your lifestyle better?</a></h5>
 					</div>	
 				</div>		
 			</div>

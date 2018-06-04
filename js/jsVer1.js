@@ -222,21 +222,91 @@ function calcLifestyle() {
 
 // ***   Input and Click Handlers   **** //
 
-$('#rent_buy_button_2_slider_input_1').on("input", function(){
-	$('#price_value').text( '$' + $(this).val() );
+// set deposit range to 5%-20%
+$("#rent_buy_button_2_slider_input_1").on("input", function() {
+	$("#rent_buy_button_2_slider_input_2").attr({
+       "max" : (1000 * Math.ceil( 0.25 * parseInt($("#rent_buy_button_2_slider_input_1").val()) / 1000) ),        
+       "min" : (1000 * Math.ceil( 0.05 * parseInt($("#rent_buy_button_2_slider_input_1").val()) / 1000) )         
+    }).val(1000 * Math.ceil( 0.1 * parseInt($("#rent_buy_button_2_slider_input_1").val()) / 1000) )
+    .trigger('input');
+
+});
+
+// Sliders  
+var el, newPoint, newPlace, offset, width;
+$("#rent_buy_button_2_slider_input_1, #rent_buy_button_2_slider_input_2").on("input", function() {
+
+el = $(this);
+width = el.width();
+
+// Figure out placement percentage between left and right of input
+newPoint = (el.val() - el.attr("min")) / (el.attr("max") - el.attr("min"));
+
+// Janky value to get pointer to line up better
+offset = -2.1;
+
+// Prevent bubble from going beyond left or right (unsupported browsers)
+if (newPoint < 0) { newPlace = 0; }
+else if (newPoint > 1) { newPlace = width; }
+else { newPlace = width * newPoint + offset; offset -= newPoint; }
+
+// Move bubble
+el
+ .next("output")
+ .css({
+   left: newPlace,
+   marginLeft: offset + "%"
+ })
+ .text( `$${parseInt(el.val()).toLocaleString('es-US', { maximumFractionDigits : 0 })}` );
 })
-$('#rent_buy_button_2_slider_input_2').on("input", function(){
-	$('#deposit_value').text( '$' + $(this).val() );
+
+$("#rent_buy_button_2_slider_input_3").on("input", function() {
+
+el = $(this);
+width = el.width();
+// Figure out placement percentage between left and right of input
+newPoint = (el.val() - el.attr("min")) / (el.attr("max") - el.attr("min"));
+// Janky value to get pointer to line up better
+offset = -2.1;
+// Prevent bubble from going beyond left or right (unsupported browsers)
+if (newPoint < 0) { newPlace = 0; }
+else if (newPoint > 1) { newPlace = width; }
+else { newPlace = width * newPoint + offset; offset -= newPoint; }
+// Move bubble
+el
+ .next("output")
+ .css({
+   left: newPlace,
+   marginLeft: offset + "%"
+ })
+ .text( $(this).val() + '%' );
 })
-$('#rent_buy_button_2_slider_input_3').on("input", function(){
-	$('#interest_value').text( $(this).val() + '%' );
-})
-$('#rent_buy_button_2_slider_input_4').on("input", function(){
-	if ( parseInt ( $(this).val() ) < 2 ) {
-		$('#years_value').text( $(this).val() + ' year' );
+
+$("#rent_buy_button_2_slider_input_4").on("input", function() {
+
+el = $(this);
+width = el.width();
+// Figure out placement percentage between left and right of input
+newPoint = (el.val() - el.attr("min")) / (el.attr("max") - el.attr("min"));
+// Janky value to get pointer to line up better
+offset = -2.1;
+// Prevent bubble from going beyond left or right (unsupported browsers)
+if (newPoint < 0) { newPlace = 0; }
+else if (newPoint > 1) { newPlace = width; }
+else { newPlace = width * newPoint + offset; offset -= newPoint; }
+// Move bubble
+el
+ .next("output")
+ .css({
+   left: newPlace,
+   marginLeft: offset + "%"
+ })
+	if ( parseInt ( el.val() ) < 2 ) {
+		el.next("output").text( el.val() + ' year' );
 	}else {
-		$('#years_value').text( $(this).val() + ' years' );		
+		el.next("output").text( el.val() + ' years' );		
 	}
+
 })
 
 $('#rent_buy_button_1').on("click", function(){
@@ -282,6 +352,8 @@ $('.spotsClass').on("click", function(){
  	calculate();
  	writeResults();
 
+ 	$("input[type='range']").trigger('input');
+
  	//  ****** CHECK FOR DOUBLE NAMES, THERE IS ONE AT LEAST    timeDuringDay2
 
   // Warning Duplicate IDs
@@ -297,44 +369,4 @@ $('.spotsClass').on("click", function(){
       console.warn('Multiple names #'+this.name);
   });
 
-
-
-
-
-
-
-
- var el, newPoint, newPlace, offset, width;
- 
- // Select all range inputs, watch for change
- $("input[type='range']").change(function() {
- 
-   // Cache this for efficiency
-   el = $(this);
-   
-   // Measure width of range input
-   width = el.width();
-   
-   // Figure out placement percentage between left and right of input
-   newPoint = (el.val() - el.attr("min")) / (el.attr("max") - el.attr("min"));
-   
-   // Janky value to get pointer to line up better
-   offset = -1.3;
-   
-   // Prevent bubble from going beyond left or right (unsupported browsers)
-   if (newPoint < 0) { newPlace = 0; }
-   else if (newPoint > 1) { newPlace = width; }
-   else { newPlace = width * newPoint + offset; offset -= newPoint; }
-   
-   // Move bubble
-   el
-     .next("output")
-     .css({
-       left: newPlace,
-       marginLeft: offset + "%"
-     })
-     .text(el.val());
- })
- // Fake a change to position bubble at page load
- .trigger('change');
 });

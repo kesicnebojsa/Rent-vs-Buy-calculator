@@ -332,7 +332,7 @@ output {
   left: 0;
   margin-left: -1%;
 }
-output:after { 
+/*output:after { 
   content: "";
   position: absolute;
   width: 0;
@@ -344,8 +344,8 @@ output:after {
   left: 50%;
   margin-left: -5px;
   margin-top: -1px;
-}
-#rent_buy_input_output_1 {
+}*/
+#rent_buy_input_output_1, #rent_buy_input_output_2, #rent_buy_input_output_3, #rent_buy_input_output_4 {
 	position: relative;
 }
 .allPLeftSliders {
@@ -359,4 +359,10 @@ output:after {
 }
 .allMainDivsLeftSliders {
 	margin-top: 15px;
+}
+
+/*DEVELOOPMENT*/
+
+#rent_buy_button_2_option_input_main {
+	display: block;
 }
