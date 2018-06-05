@@ -319,31 +319,34 @@ p {
 }
 output { 
   position: absolute;
-  background-image: linear-gradient(top, #444444, #999999);
   width: auto; 
-  height: 30px; 
-  text-align: center; 
-  color: black; 
+  height: 30px;
+  line-height: 30px; 
+  text-align: center;
+  padding: 2px 3px; 
+  color: #fff; 
+  background-color:#f98525; 
   border-radius: 10px; 
   display: inline-block; 
-  font: bold 15px/30px Georgia;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 18px; 
   bottom: 175%;
   left: 0;
   margin-left: -1%;
 }
-/*output:after { 
+output:after { 
   content: "";
   position: absolute;
   width: 0;
   height: 0;
-  border-top: 10px solid #999999;
+  border-top: 10px solid #f98525;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   top: 100%;
   left: 50%;
   margin-left: -5px;
   margin-top: -1px;
-}*/
+}
 #rent_buy_input_output_1, #rent_buy_input_output_2, #rent_buy_input_output_3, #rent_buy_input_output_4 {
 	position: relative;
 }
