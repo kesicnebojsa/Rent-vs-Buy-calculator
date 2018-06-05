@@ -376,3 +376,12 @@ output:after {
     margin: 0 auto;
     text-align: center;
 }	
+
+
+#rent_buy_main_wrapper #rent_buy_two_buttons_main #rent_buy_main_2 .activeClass {
+	background-color: #99accc;
+	color: #fff;
+}
+#rent_buy_main_wrapper #rent_buy_two_buttons_main #rent_buy_main_2 .activeClass p {
+	color: #fff;
+}
