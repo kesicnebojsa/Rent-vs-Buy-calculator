@@ -244,9 +244,8 @@ p {
 	margin: 0 auto;
 	text-align: center;
 }
-#rent_buy_button_2_option_right_inputs_subb_2 a {
-	text-decoration: none;
-	color:#2564a8; 
+#rent_buy_button_2_option_right_inputs_subb_2 h5:hover {
+	cursor: pointer;	
 }
 .mainRangePoints {
 	height: 36px;
@@ -366,3 +365,11 @@ output {
 #rent_buy_button_2_option_input_main {
 	display: block;
 }
+.vertBaselineRight {
+	vertical-align: top;
+}
+.widthH5Right {
+	width: 280px;
+    margin: 0 auto;
+    text-align: center;
+}	
