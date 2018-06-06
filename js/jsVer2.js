@@ -1,5 +1,6 @@
 "use strict";
 
+// Input values are read after each user change in inputs
 var state, housePrice, deposit, interestRate, yearsStaying;
 function getInputValues() {
 	state = $('#rent_buy_state_input').val();
@@ -202,19 +203,19 @@ function calcLifestyle() {
 		console.log( average  );
 
 		if ( average < 3 ) {
-			$('#rent_buy_button_1_option_right_inputs_main_3').css("display","inline-block");
-			$('#rent_buy_button_1_option_right_inputs_main_1, #rent_buy_button_1_option_right_inputs_main_2').css("display","none");
+			$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_3').css("display","inline-block");
+			$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_1, #rent_buy_button_1_option_right_inputs_main_1_with_a_link_2').css("display","none");
 		}
 		if ( (average >= 3) && (average < 5.5) ) {
-			$('#rent_buy_button_1_option_right_inputs_main_2').css("display","inline-block");
-			$('#rent_buy_button_1_option_right_inputs_main_1, #rent_buy_button_1_option_right_inputs_main_3').css("display","none");
+			$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_2').css("display","inline-block");
+			$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_1, #rent_buy_button_1_option_right_inputs_main_1_with_a_link_3').css("display","none");
 		}
 		if (average >= 5.5) {
-			$('#rent_buy_button_1_option_right_inputs_main_1').css("display","inline-block");
-			$('#rent_buy_button_1_option_right_inputs_main_3, #rent_buy_button_1_option_right_inputs_main_2').css("display","none");
+			$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_1').css("display","inline-block");
+			$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_3, #rent_buy_button_1_option_right_inputs_main_1_with_a_link_2').css("display","none");
 		}
 		$('html, body').animate({
-	        scrollTop: $("#rent_buy_main_button_1_slider_4").offset().top
+	        scrollTop: $("#rent_buy_button_1_option_left_inputs").offset().top
 	    }, 500);
 	}	
 }
@@ -233,73 +234,78 @@ $("#rent_buy_button_2_slider_input_1").on("input", function() {
 });
 
 // Sliders  
-var el, newPoint, newPlace, offset, width;
+var el, newPoint, newPlace, offset, width, nextOutputWidth;
 $("#rent_buy_button_2_slider_input_1, #rent_buy_button_2_slider_input_2").on("input", function() {
 
 el = $(this);
+nextOutputWidth = el.next("output").width();
 width = el.width();
+
 
 // Figure out placement percentage between left and right of input
 newPoint = (el.val() - el.attr("min")) / (el.attr("max") - el.attr("min"));
+console.log(newPoint);
 
 // Janky value to get pointer to line up better
-offset = -2.1;
+offset = (50 - newPoint*100) * 13/50;
 
 // Prevent bubble from going beyond left or right (unsupported browsers)
 if (newPoint < 0) { newPlace = 0; }
 else if (newPoint > 1) { newPlace = width; }
-else { newPlace = width * newPoint + offset; offset -= newPoint; }
+else { newPlace = width * newPoint + offset; }
 
 // Move bubble
 el
  .next("output")
  .css({
-   left: newPlace,
-   marginLeft: offset + "%"
+   left: newPlace - nextOutputWidth / 2,
+   marginLeft: 0
  })
- .text( `$${parseInt(el.val()).toLocaleString('es-US', { maximumFractionDigits : 0 })}` );
+ .text( `$${parseInt( el.val()).toLocaleString('es-US', { maximumFractionDigits : 0 })}` );
 })
 
 $("#rent_buy_button_2_slider_input_3").on("input", function() {
 
 el = $(this);
+nextOutputWidth = el.next("output").width();
 width = el.width();
 // Figure out placement percentage between left and right of input
 newPoint = (el.val() - el.attr("min")) / (el.attr("max") - el.attr("min"));
 // Janky value to get pointer to line up better
-offset = -2.1;
+offset = (50 - newPoint*100) * 13/50;
 // Prevent bubble from going beyond left or right (unsupported browsers)
 if (newPoint < 0) { newPlace = 0; }
 else if (newPoint > 1) { newPlace = width; }
-else { newPlace = width * newPoint + offset; offset -= newPoint; }
+else { newPlace = width * newPoint + offset; }
 // Move bubble
 el
  .next("output")
  .css({
-   left: newPlace,
-   marginLeft: offset + "%"
+   left: newPlace - nextOutputWidth / 2,
+   marginLeft: 0
  })
- .text( $(this).val() + '%' );
+ .text( parseFloat( $(this).val() ).toLocaleString('es-US', { minimumFractionDigits : 2, maximumFractionDigits : 2 }) + '%' );
 })
 
 $("#rent_buy_button_2_slider_input_4").on("input", function() {
 
 el = $(this);
+nextOutputWidth = el.next("output").width();
 width = el.width();
 // Figure out placement percentage between left and right of input
 newPoint = (el.val() - el.attr("min")) / (el.attr("max") - el.attr("min"));
 // Janky value to get pointer to line up better
-offset = -2.1;
+offset = (50 - newPoint*100) * 13/50;
 // Prevent bubble from going beyond left or right (unsupported browsers)
 if (newPoint < 0) { newPlace = 0; }
 else if (newPoint > 1) { newPlace = width; }
-else { newPlace = width * newPoint + offset; offset -= newPoint; }
+else { newPlace = width * newPoint + offset; }
 // Move bubble
 el
  .next("output")
  .css({
-   left: newPlace,
-   marginLeft: offset + "%"
+   left: newPlace - nextOutputWidth / 2,
+   marginLeft: 0
  })
 	if ( parseInt ( el.val() ) < 2 ) {
 		el.next("output").text( el.val() + ' year' );
@@ -310,10 +316,26 @@ el
 })
 
 $('#rent_buy_button_1').on("click", function(){
+	$(this).addClass('activeClass');
+	$('#rent_buy_button_2').removeClass('activeClass');
 	$('#rent_buy_button_1_option_input_main').css("display","block");
 	$('#rent_buy_button_2_option_input_main').css("display","none");
 })
 $('#rent_buy_button_2').on("click", function(){
+	$(this).addClass('activeClass');
+	$('#rent_buy_button_1').removeClass('activeClass');
+	$('#rent_buy_button_2_option_input_main').css("display","block");
+	$('#rent_buy_button_1_option_input_main').css("display","none");
+})
+$('#rent_buy_button_2_option_right_inputs_subb_2 h5').on("click", function(){
+	$('#rent_buy_button_1').addClass('activeClass');
+	$('#rent_buy_button_2').removeClass('activeClass');
+	$('#rent_buy_button_1_option_input_main').css("display","block");
+	$('#rent_buy_button_2_option_input_main').css("display","none");
+})
+$('#rent_buy_button_1_right_link_a_2 > h5, #rent_buy_button_1_right_link_a_3 > h5, #rent_buy_button_1_right_link_a_1 > h5').on("click", function(){
+	$('#rent_buy_button_2').addClass('activeClass');
+	$('#rent_buy_button_1').removeClass('activeClass');
 	$('#rent_buy_button_2_option_input_main').css("display","block");
 	$('#rent_buy_button_1_option_input_main').css("display","none");
 })
@@ -353,6 +375,7 @@ $('.spotsClass').on("click", function(){
  	writeResults();
 
  	$("input[type='range']").trigger('input');
+ 	$("#rent_buy_button_2_slider_input_1").trigger('input');
 
  	//  ****** CHECK FOR DOUBLE NAMES, THERE IS ONE AT LEAST    timeDuringDay2
 

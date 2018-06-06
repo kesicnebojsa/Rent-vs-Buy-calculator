@@ -281,8 +281,11 @@ p {
 	background-color: #f98525;
 	border-color: #f98525;
 }
-#rent_buy_button_1_option_right_inputs_main_1, #rent_buy_button_1_option_right_inputs_main_2, #rent_buy_button_1_option_right_inputs_main_3 {
+#rent_buy_button_1_option_right_inputs_main_1_with_a_link_1, #rent_buy_button_1_option_right_inputs_main_1_with_a_link_2, #rent_buy_button_1_option_right_inputs_main_1_with_a_link_3 {
 	display: none;
+}
+#rent_buy_button_1_right_link_a_2 > h5:hover, #rent_buy_button_1_right_link_a_3 > h5:hover, #rent_buy_button_1_right_link_a_1 > h5:hover {
+	cursor: pointer;
 }
 .allPointExplMain {
 	width: 748px;
@@ -319,6 +322,7 @@ p {
 }
 output { 
   position: absolute;
+  min-width: 75px;
   width: auto; 
   height: 30px;
   line-height: 30px; 
@@ -330,7 +334,7 @@ output {
   display: inline-block; 
   font-family: 'Merriweather Sans', sans-serif;
   font-size: 18px; 
-  bottom: 175%;
+  bottom: 210%;
   left: 0;
   margin-left: -1%;
 }
@@ -377,7 +381,6 @@ output:after {
     text-align: center;
 }	
 
-
 #rent_buy_main_wrapper #rent_buy_two_buttons_main #rent_buy_main_2 .activeClass {
 	background-color: #99accc;
 	color: #fff;
@@ -385,3 +388,7 @@ output:after {
 #rent_buy_main_wrapper #rent_buy_two_buttons_main #rent_buy_main_2 .activeClass p {
 	color: #fff;
 }
+.activeClass .rotateClass {
+	border-color: white;
+}
+
