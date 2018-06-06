@@ -162,22 +162,22 @@ function calculate() {
 
 	rentPerWeek = buyTotal / (yearsStaying * 52);
 
-	console.log('availableDeposit: ', availableDeposit);
-	console.log('totalLoan: ', totalLoan);
-	console.log('mortgageRepayment: ', mortgageRepayment);
+	// console.log('availableDeposit: ', availableDeposit);
+	// console.log('totalLoan: ', totalLoan);
+	// console.log('mortgageRepayment: ', mortgageRepayment);
 
-	console.log('buyUpfront: ', buyUpfront);
-	console.log('buyCostOverTime: ', buyCostOverTime);
-	console.log('buyOpportunityCosts: ', buyOpportunityCosts);
-	console.log('buyEndCost: ', buyEndCost);
-	console.log('buyTotal: ', buyTotal);
+	// console.log('buyUpfront: ', buyUpfront);
+	// console.log('buyCostOverTime: ', buyCostOverTime);
+	// console.log('buyOpportunityCosts: ', buyOpportunityCosts);
+	// console.log('buyEndCost: ', buyEndCost);
+	// console.log('buyTotal: ', buyTotal);
 
 	// rent
 	rentUpfront = 52/12 * rentPerWeek;
 	rentCostOverTime = yearsStaying * 52 * rentPerWeek;
 
 	rentTotal = rentCostOverTime;
-	console.log('rentPerWeek: ', rentPerWeek);
+	// console.log('rentPerWeek: ', rentPerWeek);
 }
 
 function writeResults() {
@@ -199,18 +199,18 @@ function calcLifestyle() {
 		var flexibility = parseInt( $('.activeFlexibility').attr('id').slice(-1) );
 		var commited = parseInt( $('.activeCommited').attr('id').slice(-1) );
 
-		var average = (location + owning + flexibility + commited)  / 4;
-		console.log( average  );
+		var average = location + owning + flexibility + commited;
+		// console.log( average  );
 
-		if ( average < 3 ) {
+		if ( average < 9 ) {
 			$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_3').css("display","inline-block");
 			$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_1, #rent_buy_button_1_option_right_inputs_main_1_with_a_link_2').css("display","none");
 		}
-		if ( (average >= 3) && (average < 5.5) ) {
+		if ( (average >= 9) && (average < 24) ) {
 			$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_2').css("display","inline-block");
 			$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_1, #rent_buy_button_1_option_right_inputs_main_1_with_a_link_3').css("display","none");
 		}
-		if (average >= 5.5) {
+		if (average >= 24) {
 			$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_1').css("display","inline-block");
 			$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_3, #rent_buy_button_1_option_right_inputs_main_1_with_a_link_2').css("display","none");
 		}
@@ -226,8 +226,7 @@ function calcLifestyle() {
 // set deposit range to 5%-20%
 $("#rent_buy_button_2_slider_input_1").on("input", function() {
 	$("#rent_buy_button_2_slider_input_2").attr({
-       "max" : (1000 * Math.ceil( 0.25 * parseInt($("#rent_buy_button_2_slider_input_1").val()) / 1000) ),        
-       "min" : (1000 * Math.ceil( 0.05 * parseInt($("#rent_buy_button_2_slider_input_1").val()) / 1000) )         
+       "max" : (1000 * Math.ceil( parseInt($("#rent_buy_button_2_slider_input_1").val()) / 1000) )      
     }).val(1000 * Math.ceil( 0.1 * parseInt($("#rent_buy_button_2_slider_input_1").val()) / 1000) )
     .trigger('input');
 
@@ -244,7 +243,7 @@ width = el.width();
 
 // Figure out placement percentage between left and right of input
 newPoint = (el.val() - el.attr("min")) / (el.attr("max") - el.attr("min"));
-console.log(newPoint);
+// console.log(newPoint);
 
 // Janky value to get pointer to line up better
 offset = (50 - newPoint*100) * 13/50;
@@ -326,6 +325,8 @@ $('#rent_buy_button_2').on("click", function(){
 	$('#rent_buy_button_1').removeClass('activeClass');
 	$('#rent_buy_button_2_option_input_main').css("display","block");
 	$('#rent_buy_button_1_option_input_main').css("display","none");
+	$("input[type='range']").trigger('input');
+ 	$("#rent_buy_button_2_slider_input_1").trigger('input');
 })
 $('#rent_buy_button_2_option_right_inputs_subb_2 h5').on("click", function(){
 	$('#rent_buy_button_1').addClass('activeClass');
@@ -338,6 +339,8 @@ $('#rent_buy_button_1_right_link_a_2 > h5, #rent_buy_button_1_right_link_a_3 > h
 	$('#rent_buy_button_1').removeClass('activeClass');
 	$('#rent_buy_button_2_option_input_main').css("display","block");
 	$('#rent_buy_button_1_option_input_main').css("display","none");
+	$("input[type='range']").trigger('input');
+ 	$("#rent_buy_button_2_slider_input_1").trigger('input');
 })
 
 $('.locationSpots').on("click",function(){
@@ -373,9 +376,6 @@ $('.spotsClass').on("click", function(){
  	getInputValues();
  	calculate();
  	writeResults();
-
- 	$("input[type='range']").trigger('input');
- 	$("#rent_buy_button_2_slider_input_1").trigger('input');
 
  	//  ****** CHECK FOR DOUBLE NAMES, THERE IS ONE AT LEAST    timeDuringDay2
 
