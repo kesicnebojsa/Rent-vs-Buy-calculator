@@ -355,7 +355,7 @@ output:after {
 	position: relative;
 }
 .allPLeftSliders {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 #rent_buy_button_2_option_right_inputs_subb_1 h4 {
 	width: 340px;
@@ -390,5 +390,8 @@ output:after {
 }
 .activeClass .rotateClass {
 	border-color: white;
+}
+#h4_rent_vs_buy_left_0ption_2 {
+	margin-bottom: 	30px;
 }
 
