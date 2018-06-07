@@ -202,18 +202,24 @@ function calcLifestyle() {
 		var average = location + owning + flexibility + commited;
 		// console.log( average  );
 
-		if ( average < 9 ) {
-			$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_3').css("display","inline-block");
-			$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_1, #rent_buy_button_1_option_right_inputs_main_1_with_a_link_2').css("display","none");
-		}
-		if ( (average >= 9) && (average < 24) ) {
-			$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_2').css("display","inline-block");
-			$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_1, #rent_buy_button_1_option_right_inputs_main_1_with_a_link_3').css("display","none");
-		}
-		if (average >= 24) {
+		if ( $('#rent_buy_range_point_2_spot_7').hasClass('activeOwning') || $('#rent_buy_range_point_4_spot_7').hasClass('activeCommited') ) {
 			$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_1').css("display","inline-block");
 			$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_3, #rent_buy_button_1_option_right_inputs_main_1_with_a_link_2').css("display","none");
+		}else{
+			if ( average < 9 ) {
+				$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_3').css("display","inline-block");
+				$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_1, #rent_buy_button_1_option_right_inputs_main_1_with_a_link_2').css("display","none");
+			}
+			if ( (average >= 9) && (average < 24) ) {
+				$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_2').css("display","inline-block");
+				$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_1, #rent_buy_button_1_option_right_inputs_main_1_with_a_link_3').css("display","none");
+			}
+			if (average >= 24) {
+				$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_1').css("display","inline-block");
+				$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_3, #rent_buy_button_1_option_right_inputs_main_1_with_a_link_2').css("display","none");
+			}			
 		}
+
 		$('html, body').animate({
 	        scrollTop: $("#rent_buy_button_1_option_left_inputs").offset().top
 	    }, 500);
