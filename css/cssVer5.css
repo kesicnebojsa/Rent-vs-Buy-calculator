@@ -285,6 +285,9 @@ p {
 #rent_buy_button_1_option_right_inputs_main_1_with_a_link_1, #rent_buy_button_1_option_right_inputs_main_1_with_a_link_2, #rent_buy_button_1_option_right_inputs_main_1_with_a_link_3 {
 	display: none;
 }
+#rent_buy_main_wrapper .blockClass {
+    display: inline-block;
+}
 #rent_buy_button_1_right_link_a_2 > h5:hover, #rent_buy_button_1_right_link_a_3 > h5:hover, #rent_buy_button_1_right_link_a_1 > h5:hover {
 	cursor: pointer;
 }
@@ -422,6 +425,9 @@ output:after {
     }
 }
 @media (max-width: 1270px) {
+    #rent_buy_main_wrapper .blockClass {
+        display: block;
+    }
 	.leftMain {
     width: 750px;
     }
@@ -449,6 +455,8 @@ output:after {
     }
     .allRightDivs {
     width: 500px;
+    margin: 0 auto;
+    margin-top: 30px;
     }
     #rent_buy_wrapper_subb {
     width: 900px;

@@ -203,26 +203,34 @@ function calcLifestyle() {
 		// console.log( average  );
 
 		if ( $('#rent_buy_range_point_2_spot_7').hasClass('activeOwning') || $('#rent_buy_range_point_4_spot_7').hasClass('activeCommited') ) {
-			$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_1').css("display","inline-block");
-			$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_3, #rent_buy_button_1_option_right_inputs_main_1_with_a_link_2').css("display","none");
+			$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_1').addClass('blockClass');
+			$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_3, #rent_buy_button_1_option_right_inputs_main_1_with_a_link_2').removeClass('blockClass');
+			$('html, body').animate({
+		        scrollTop: $("#rent_buy_button_1_option_right_inputs_main_1_with_a_link_1").offset().top
+		    }, 500);
 		}else{
 			if ( average < 9 ) {
-				$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_3').css("display","inline-block");
-				$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_1, #rent_buy_button_1_option_right_inputs_main_1_with_a_link_2').css("display","none");
+				$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_3').addClass('blockClass');
+				$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_1, #rent_buy_button_1_option_right_inputs_main_1_with_a_link_2').removeClass('blockClass');
+				$('html, body').animate({
+			        scrollTop: $("#rent_buy_button_1_option_right_inputs_main_1_with_a_link_3").offset().top
+			    }, 500);
 			}
 			if ( (average >= 9) && (average < 24) ) {
-				$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_2').css("display","inline-block");
-				$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_1, #rent_buy_button_1_option_right_inputs_main_1_with_a_link_3').css("display","none");
+				$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_2').addClass('blockClass');
+				$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_1, #rent_buy_button_1_option_right_inputs_main_1_with_a_link_3').removeClass('blockClass');
+				$('html, body').animate({
+			        scrollTop: $("#rent_buy_button_1_option_right_inputs_main_1_with_a_link_2").offset().top
+			    }, 500);
 			}
 			if (average >= 24) {
-				$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_1').css("display","inline-block");
-				$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_3, #rent_buy_button_1_option_right_inputs_main_1_with_a_link_2').css("display","none");
+				$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_1').addClass('blockClass');
+				$('#rent_buy_button_1_option_right_inputs_main_1_with_a_link_3, #rent_buy_button_1_option_right_inputs_main_1_with_a_link_2').removeClass('blockClass');
+				$('html, body').animate({
+			        scrollTop: $("#rent_buy_button_1_option_right_inputs_main_1_with_a_link_1").offset().top
+			    }, 500);
 			}			
 		}
-
-		$('html, body').animate({
-	        scrollTop: $("#rent_buy_button_1_option_left_inputs").offset().top
-	    }, 500);
 	}	
 }
 
