@@ -533,6 +533,9 @@ output:after {
     #rent_buy_button_2_option_left_inputs p {
         width: 600px;
     }
+    #rent_buy_button_1_option_right_inputs_main_1_with_a_link_1,#rent_buy_button_1_option_right_inputs_main_1_with_a_link_2 ,#rent_buy_button_1_option_right_inputs_main_1_with_a_link_3 {
+        width:400px;
+    }
 }
 @media (max-width: 700px) {
 	#rent_buy_main_head {
@@ -677,6 +680,16 @@ output:after {
     width: 400px;
     margin-left: 0px;
     }
+    #rent_buy_button_1_option_right_inputs_main_2,#rent_buy_button_1_option_right_inputs_main_1,#rent_buy_button_1_option_right_inputs_main_3 {
+        margin-right: 0px;
+    }
+    #rent_buy_button_1_option_right_inputs_main_1 h3,#rent_buy_button_1_option_right_inputs_main_2 h3,#rent_buy_button_1_option_right_inputs_main_3 h3 {
+        font-size: 20px;
+    }
+    .widthH5Right {
+    width: 240px;
+    margin: 0 auto;
+    }
 }
 @media (max-width: 460px) {
 	#rent_buy_main_head {
@@ -780,6 +793,9 @@ output:after {
     .allOrangeButtonsRight {
     width: 280px;
     }
+    #rent_buy_button_1_option_right_inputs_main_1_with_a_link_1,#rent_buy_button_1_option_right_inputs_main_1_with_a_link_2 ,#rent_buy_button_1_option_right_inputs_main_1_with_a_link_3 {
+        width:280px;
+    }
 }
 @media (max-width: 340px) {
 	#rent_buy_main_head {
@@ -850,7 +866,7 @@ output:after {
     width: 240px;
     }
     .allRightDivs {
-    width: 240px;
+    width: 220px;
     }
     #rent_buy_button_2_option_right_inputs_subb_1 h4 {
     	width: 220px;
@@ -861,10 +877,24 @@ output:after {
     	font-size: 16px;
     }
     .allOrangeButtonsRight {
-    width: 220px;
+    width: 210px;
     }
     #rent_buy_button_2_option_right_inputs_subb_2 {
     width: 220px;
     font-size: 18px;
+    }
+    #rent_buy_button_1_option_right_inputs_main_1_with_a_link_1,#rent_buy_button_1_option_right_inputs_main_1_with_a_link_2 ,#rent_buy_button_1_option_right_inputs_main_1_with_a_link_3 {
+        width:220px;
+    }
+    .widthH5Right {
+    width: 220px;
+    margin: 0 auto;
+    }
+    #rent_buy_button_2_option_right_inputs_subb_2 h5 {
+    width: 210px;
+    }
+    #rent_buy_button_2_option_right_inputs_subb_1 {
+        margin-right: 0px;
+    }
 }
-}
+
